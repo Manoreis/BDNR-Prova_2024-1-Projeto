@@ -28,10 +28,15 @@ Todas as páginas devem ter um design CSS que se adapte às ações e eventos oc
 •	Ações da Página: O CSS deve refletir as ações e mudanças na página, como feedback visual para ações de CRUD e notificações no chat.
 
 
+link do vídeo YouTube: https://youtu.be/cmaCa_JiPw4
+
+
 
 Video:
 
 
+
+https://github.com/Manoreis/BDNR-Prova_2024-1-Projeto/assets/112266496/95062bc9-b12e-4df8-abf9-15aa42a09ace
 
 
 
