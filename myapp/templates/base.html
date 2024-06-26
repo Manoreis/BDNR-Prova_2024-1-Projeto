@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Meu Projeto Django{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        {% block content %}
+        <!-- Conteúdo será inserido aqui nos templates filhos -->
+        {% endblock %}
+    </div>
+</body>
+</html>

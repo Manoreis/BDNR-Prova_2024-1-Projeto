@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmar Exclusão - Meu Projeto Django</title>
+    <!-- Carrega as tags estáticas no início do arquivo -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles_car_confirm_delete.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Confirmar Exclusão</h2>
+        <p>Você tem certeza que deseja excluir "{{ object }}"?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Confirmar</button>
+        </form>
+        <a href="{% url 'car-list' %}">Cancelar</a>
+    </div>
+</body>
+</html>

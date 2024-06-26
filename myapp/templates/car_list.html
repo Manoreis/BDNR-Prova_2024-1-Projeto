@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Carros - Meu Projeto Django</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles_car_list.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Lista de Carros</h2>
+        <ul>
+        {% for car in object_list %}
+            <li><a href="{% url 'car-detail' car.pk %}">{{ car }}</a></li>
+        {% empty %}
+            <li>Nenhum carro encontrado.</li>
+        {% endfor %}
+        </ul>
+        <a href="{% url 'car-create' %}">Adicionar Novo Carro</a>
+    </div>
+</body>
+</html>

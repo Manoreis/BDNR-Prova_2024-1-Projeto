@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div id="chat" class="chat-box"></div>
+        <input type="text" id="messageText" class="chat-input" placeholder="Digite uma mensagem..." />
+    </div>
+    <script>
+        let ws = new WebSocket("ws://localhost:8002/ws");
+        ws.onmessage = function(event) {
+            let messages = document.getElementById('chat');
+            let message = document.createElement('div');
+            message.className = 'chat-message';
+            message.textContent = event.data;
+            messages.appendChild(message);
+            messages.scrollTop = messages.scrollHeight;
+        };
+        document.getElementById('messageText').addEventListener('keyup', function(event) {
+            if (event.keyCode === 13) {
+                let input = document.getElementById('messageText');
+                ws.send(input.value);
+                input.value = '';
+            }
+        });
+    </script>
+</body>
+</html>

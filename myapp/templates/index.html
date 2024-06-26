@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat em Tempo Real</title>
+    <script>
+        const room_id = 'sala1';  // Defina o ID da sala aqui
+        const socket = new WebSocket(`ws://localhost:8000/chat/${room_id}`);
+
+        // Função para lidar com mensagens recebidas
+        socket.onmessage = function(event) {
+            const message = JSON.parse(event.data);
+            displayMessage(message);
+        };
+
+        // Função para enviar mensagens
+        function sendMessage(event) {
+            event.preventDefault();
+            const messageInput = document.getElementById('message-input');
+            const message = messageInput.value.trim();
+            if (message) {
+                socket.send(JSON.stringify({ 'message': message }));
+                messageInput.value = '';
+            }
+        }
+
+        // Função para exibir mensagem na interface
+        function displayMessage(message) {
+            const chatMessages = document.getElementById('chat-messages');
+            const messageElement = document.createElement('div');
+            messageElement.innerText = message.message;
+            chatMessages.appendChild(messageElement);
+        }
+    </script>
+</head>
+<body>
+    <h1>Chat em Tempo Real</h1>
+
+    <div id="chat-messages">
+        <!-- Aqui serão exibidas as mensagens do chat -->
+    </div>
+
+    <form onsubmit="sendMessage(event)">
+        <input type="text" id="message-input" placeholder="Digite sua mensagem..." required>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
