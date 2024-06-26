@@ -1,4 +1,4 @@
-# BDNR-Prova_2024-1-Projeto
+# BDNR-Prova_2024-1-Projeto P2
 Este é um repositório de graduando em Engenharia de Software - 5º período - Univassouras (Marica) Disciplina BD não Relacionais - Professor: Fabricio Dias
 
 Universidade de Vassouras Campus Marica
