@@ -27,3 +27,14 @@ Todas as páginas devem ter um design CSS que se adapte às ações e eventos oc
 •	Responsividade: As páginas devem ser responsivas, adaptando-se bem a diferentes tamanhos de tela.
 •	Ações da Página: O CSS deve refletir as ações e mudanças na página, como feedback visual para ações de CRUD e notificações no chat.
 
+
+
+Video:
+
+
+
+
+
+
+
+
